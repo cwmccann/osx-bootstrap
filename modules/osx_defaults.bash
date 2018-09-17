@@ -36,12 +36,6 @@ done
 # Disable “natural” (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-# Set language and text formats
-defaults write NSGlobalDomain AppleLanguages -array "en" "ru"
-defaults write NSGlobalDomain AppleLocale -string "ru_RU@currency=RUB"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-defaults write NSGlobalDomain AppleMetricUnits -bool true
-
 # Accelerate cursor
 defaults write NSGlobalDomain KeyRepeat -int 0
 
@@ -108,9 +102,9 @@ defaults write com.apple.dock persistent-apps -array
 for app in \
   System\ Preferences \
   Safari \
-  Slack \
   iTerm \
-  Sublime\ Text
+  Visual\ Studio\ Code \
+  Xcode
 do
   defaults write com.apple.dock "persistent-apps" -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/$app.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 done
@@ -130,8 +124,8 @@ defaults write com.apple.dock showhidden -bool true
 # Turn off dock icons magnification
 defaults write com.apple.dock magnification -boolean false
 
-# Show dock on right
-defaults write com.apple.dock orientation -string 'right'
+# Show dock on bottom
+defaults write com.apple.dock orientation -string 'bottom'
 
 ###############################################################################
 # Safari & WebKit                                                             #

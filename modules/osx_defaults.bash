@@ -10,7 +10,7 @@ info_echo "Set OS X defaults"
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-hostname=$(whoami)
+hostname=osxvm-$(whoami)
 sudo scutil --set ComputerName "$hostname"
 sudo scutil --set HostName "$hostname"
 sudo scutil --set LocalHostName "$hostname"

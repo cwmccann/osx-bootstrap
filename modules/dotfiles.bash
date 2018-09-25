@@ -33,6 +33,25 @@ link_files() {
   success "linked $1 to $2"
 }
 
+setup_gitconfig() {
+  if ! [ -f gitconfig.symlink ]
+  then
+    info 'setup gitconfig'
+
+    user ' - What is your github author name?'
+    read -re git_authorname
+    user ' - What is your github author email?'
+    read -re git_authoremail
+
+    sed -e "s/AUTHORNAME/$git_authorname/g" \
+        -e "s/AUTHOREMAIL/$git_authoremail/g" \
+        -e "s/WHOAMI/$(whoami)/g" \
+        gitconfig.symlink.example > gitconfig.symlink
+
+    success 'gitconfig'
+  fi
+}
+
 install_dotfiles() {
   info 'installing dotfiles'
 
@@ -100,6 +119,7 @@ install_dotfiles() {
   done
 }
 
+setup_gitconfig
 install_dotfiles
 
 echo ''

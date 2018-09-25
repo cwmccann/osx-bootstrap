@@ -15,6 +15,7 @@ cask "iterm2"
 cask "the-unarchiver"
 cask "visual-studio-code"
 cask "java"
+cask "chrome"
 
 # Node
 brew "node"
@@ -25,3 +26,4 @@ brew "libimobiledevice", args: ["HEAD"]
 brew "ideviceinstaller"
 brew "ios-deploy"
 brew "ios-webkit-debug-proxy"
+cask "fastlane"

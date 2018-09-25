@@ -16,6 +16,24 @@ sudo scutil --set HostName "$hostname"
 sudo scutil --set LocalHostName "$hostname"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$hostname"
 
+#switch scroll direction.  Requires logout
+defaults write ~/Library/Preferences/.GlobalPreferences  com.apple.swipescrolldirection -bool true
+
+#enable the home ,end keys
+mkdir -p $HOME/Library/KeyBindings
+cat << EOF > $HOME/Library/KeyBindings/DefaultKeyBinding.dict
+{
+ "\UF729"  = moveToBeginningOfParagraph:; // home
+ "\UF72B"  = moveToEndOfParagraph:; // end
+ "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // shift-home
+ "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // shift-end
+ "^\UF729" = moveToBeginningOfDocument:; // ctrl-home
+ "^\UF72B" = moveToEndOfDocument:; // ctrl-end
+ "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // ctrl-shift-home
+ "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
+}
+EOF
+
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 

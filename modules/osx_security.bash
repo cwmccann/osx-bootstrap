@@ -9,3 +9,6 @@ chflags nohidden ~/Library
 
 info_echo "Empty Trash securely by default"
 defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+info_echo "Enabling remote ssh access"
+sudo systemsetup -setremotelogin on

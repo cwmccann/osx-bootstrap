@@ -5,3 +5,6 @@ source "$osx_bootstrap/modules/functions.bash"
 
 info_echo "Specify xcode"
 sudo xcode-select --switch /Applications/Xcode.app
+
+info_echo "Install xcpretty"
+sudo gem install xcpretty

@@ -18,6 +18,7 @@ modules=(
   xcode
   osx_defaults
   osx_security
+  ssh
   dotfiles
 )
 

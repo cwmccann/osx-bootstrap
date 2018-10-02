@@ -4,6 +4,7 @@ brew "ffmpeg"
 brew "git"
 brew "git-lfs"
 brew "z"
+brew "coreutils"
 
 
 # Essential Mac applications
@@ -15,7 +16,7 @@ cask "iterm2"
 cask "the-unarchiver"
 cask "visual-studio-code"
 cask "java"
-cask "chrome"
+cask "google-chrome"
 
 # Node
 brew "node"

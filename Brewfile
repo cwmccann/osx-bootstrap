@@ -15,7 +15,7 @@ tap "homebrew/bundle"
 cask "iterm2"
 cask "the-unarchiver"
 cask "visual-studio-code"
-cask "java"
+cask "java10"
 cask "google-chrome"
 
 # Node
@@ -23,6 +23,7 @@ brew "node"
 
 #ios stuff
 brew "carthage"
+brew "usbmuxd", args: ["HEAD"]
 brew "libimobiledevice", args: ["HEAD"]
 brew "ideviceinstaller"
 brew "ios-deploy"

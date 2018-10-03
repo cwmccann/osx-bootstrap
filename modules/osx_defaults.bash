@@ -17,7 +17,7 @@ sudo scutil --set LocalHostName "$hostname"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$hostname"
 
 #switch scroll direction.  Requires logout
-defaults write ~/Library/Preferences/.GlobalPreferences  com.apple.swipescrolldirection -bool true
+defaults write -g com.apple.swipescrolldirection -bool YES
 
 #enable the home ,end keys
 mkdir -p $HOME/Library/KeyBindings
@@ -122,7 +122,8 @@ for app in \
   Safari \
   iTerm \
   Visual\ Studio\ Code \
-  Xcode
+  Xcode \
+  Google Chrome
 do
   defaults write com.apple.dock "persistent-apps" -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/$app.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 done
